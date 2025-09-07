@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Network and Security Documentation</title>
+</head>
+<body>
+    <article>
+        <h1>Basic Network and Security Documentation for a Small Office</h1>
+        <h3>Susanne M Jimenez</h3>
+        <p><strong>Northern Arizona University</strong><br>10/29/2024</p>
+
+        <h2>Abstract</h2>
+        <p>This project provides an overview of the process of developing a network and security plan for a small office environment. The focus is on building a basic network diagram, implementing security protocols, and establishing an incident response plan.</p>
+
+        <h2>Introduction</h2>
+        <p>In today’s digital age, small businesses are increasingly dependent on technology for their daily operations. . Many small offices lack dedicated IT support, which makes it critical to establish clear and effective network and security documentation. This project provides a structured approach to managing the basic office network and securing the environment. By creating a simple network diagram, establishing basic security protocols, and developing an incident response plan, this documentation will empower the small office staff to better understand and manage their own IT environment.</p>
+
+        <!-- Continue formatting each section like this, wrapping paragraphs in <p> and using <h2>, <h3>, etc. -->
+
+        <h2>Background</h2>
+        <p>The small office in this project consists of four employees, but they might hire another person down the road as they grow. They would like a shared network for their internet services, file sharing, and one office printer. So far, they have not had any incidents. Since they believe they will grow in the next few years, they wanted something manageable but could also frow. The project s intended to address these gaps by providing easy-to-follow documentation that any employee, regardless of technical background, can understand and implement. However, at this time the office manager Sam will be responsible. It should be noted that Sam is also an IT student. This documentation is designed to reduce the complexity of network management and introduce a policy to follow if there is an incident.
+
+        <h2>Network Diagram Creation</h2>
+        <p>The first step in this project was to create a network diagram to map out all devices and connections within the office. The diagram was created using Lucidchart which is an online diagramming tool. Lucidchart. Allowed for easy visualization of the physical and logical structure of the network. (LucidChart) The objective was to make the diagram simple enough for non-technical staff to understand it while still providing enough detail for Sam to manage their network.
+          
+        <img src="image001.jpg" alt="Network diagram for small office" width="600">
+
+        <h2>Key Components of the Network Diagram:</h2>
+        <ul>
+            <li>Workstations for four employees (John, Roberto, Mary, and Sam)</li>
+            <li>Network Printer for shared office printing</li>
+            <li>Wireless Access Point for wireless connectivity</li>
+            <li>Managed Switch for network segmentation</li>
+            <li>Small Web Server managed by Amazon Web Services (AWS) for hosting resources</li>
+            <li>Router to connect the office network to the internet</li>
+            <li>Simple Server with local storage synced to AWS incremental backup</li>
+        </ul>
+        <p>These components are sufficient to get the small office operational. The diagram clearly identifies each component and its use on the network. This provides a clear understanding of the physical and logical structure.</p>
+
+        <h2>Security Protocol Development</h2>
+        <p>After the network diagram was completed, the next step was to develop basic security protocols to protect the network. These security protocols include password management guidelines, device access policies, and rules for sharing resources. The primary focus was on keeping the security measures straightforward and manageable for a small office without a dedicated IT department.</p>
+
+        <h2>Security Measure Include:</h2>
+        <ul>
+            <li>
+                <strong>Regular Password Changes:</strong> Enforcing a 60-day password change policy through Active Directory using open Group Policy Management Console (GPMC).
+             <a href="https://youtu.be/GRy5GFuZfWw?si=imBFHckv8O4O7hK2" target="_blank">How to configure a password policy in AD</a>
+            </li>
+            <li> <strong>Windows Defender:</strong> Use Group Policy settings to configure and manage Microsoft Defender Antivirus.
+    <a href="https://learn.microsoft.com/en-us/defender-endpoint/use-group-policy-microsoft-defender-antivirus" target="_blank">Microsoft Defender setup guide</a>
+            </li>
+            <li> <strong>Wireless Security:</strong> Configured WPA3 and hidden SSID to protect network access. 
+    <a href="https://nordvpn.com/blog/wep-vs-wpa-vs-wpa2-vs-wpa3/" target="_blank">WPA3 explained</a></li>
+
+        </ul>
+        </p>
+
+        </p>
+        <h2>References</h2>
+        <ul>
+            <li><a href="https://www.lucidchart.com/pages/examples/network-diagram">Lucidchart. (n.d.). Diagramming Tool.</a></li>
+            <li><a href="https://youtu.be/GRy5GFuZfWw?si=fkT73HPPIwSl8V9F">Moran, D. (2022). How to configure an Active Directory password policy. Youtube.</a></li>
+            <!-- Continue the rest of your references in this format -->
+        </ul>
+    </article>
+
+    <article>
+        <h2>Addendum</h2>
+        <p>As I converted my academic paper into a web-based format using HTML, I aimed to maintain the original structure and clarity of the content while using appropriate semantic tags to improve readability and accessibility. I started with the <code>&lt;article&gt;</code> tag to wrap the entire body of the paper, reflecting that it is a standalone piece of content.</p>
+         <p>I used the <code>&lt;img&gt;</code> tag to include the network diagram and made sure to add an <code>alt</code> attribute for accessibility. For in-text citations and references, I used <code>&lt;a&gt;</code> tags so users could easily access the original resources via hyperlinks. This not only supports credibility but also makes the webpage more interactive.</p>
+         <p> One of the challenges I faced was breaking up large blocks of text into meaningful sections. HTML encouraged me to look at the structure more critically and consider how readers navigate digital content differently than print. I tried to keep the formatting clean and readable, knowing that styling would be handled later with CSS.</p>
+         <p>Overall, this project helped me understand the importance of semantic HTML and how using the right tags gives content both structure and meaning. It also prepares the page for future improvements in appearance and accessibility.</p>
+         
+    </article>
+
+    <footer>
+        <p>Last updated: <span id="lastModified"></span></p>
+    </footer>
+    <script type="text/javascript">
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+</body>
+</html>
