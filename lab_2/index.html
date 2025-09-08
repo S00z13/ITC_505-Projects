@@ -55,10 +55,50 @@
             <li> <strong>Windows Defender:</strong> Use Group Policy settings to configure and manage Microsoft Defender Antivirus.
     <a href="https://learn.microsoft.com/en-us/defender-endpoint/use-group-policy-microsoft-defender-antivirus" target="_blank">Microsoft Defender setup guide</a>
             </li>
+            <li> <strong>Active Directory and SCCM: Implementing a simple Active Directory (AD) with System Center Configuration Manager (SCCM) for centralized managment.</strong> <a href="https://www.youtube.com/watch?v=kuFM6_kyQVY" target="blank" >Installing Active Directory and Creating Domain</a>
+            </li>
+            <li> <strong>Network Segmentation:</strong> Using a managed switch to segment the network and limit lateral movement in case of a breach. This set up is discussed under Network Security Implementation</li>
+            <li> <strong>Backup Strategy</strong> Performing a small incremental backup every Saturday night, with backups saved for redundancy using Amazon Web Services (AWS) for a small monthly fee. This is also done locally on Simple Server. <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/group-policy/group-policy-backup-restore" target="blank" >Backup, restore, migrate, and copy Group Policy Objects</a></li>
+            <l> <strong>Restrict Access:</strong>  Limiting access to certain parts of the network and avoiding the use of shared credentials.</l>
             <li> <strong>Wireless Security:</strong> Configured WPA3 and hidden SSID to protect network access. 
     <a href="https://nordvpn.com/blog/wep-vs-wpa-vs-wpa2-vs-wpa3/" target="_blank">WPA3 explained</a></li>
 
         </ul>
+        <h2>Acceptable Use Policy</h2>
+        <p>An Acceptable Use Policy (AUP) was also developed to provide clear guidelines modeled after FR Secure Acceptable Use Policy Template (FRSecure. 2024). This describes how the office network and devices should be used. The policy for this small office is customized specifically for this environment and includes the following points:</p>
+        <ul>
+            <li><strong>Authorized Use Only:</strong> The office network and devices are t be used for business purposes only. Personal activities, such as streaming entertainment or accessing social media unrelated to work, are prohibited.</li>
+            <li><strong>No Unauthorized Devices:</strong> Employees are not allowed to connect any personal devices (BYOD- Bring Your Own Device) to the work network without explicit authorization. This policy helps prevent unauthorized access and minimizes security risks.</li>
+            <li><strong>Data Protection:</strong> Employees must not share sensitive business information without proper authorization. Information, when allowed, should only be shared through secure channels.</li>
+            <li><strong>Internet Use:</strong> Access to unauthorized or potentially harmful websites is prohibited. Employees are expected to use the internet in a way that is appropriate and maintains the integrity of the office network.</li>
+
+        </ul>
+        <p>All employes were required to review and acknowledge the AUP. This will help maintain a secure work environment by ensuring that everyone understands their responsibilities regarding network use</p>
+        <h2>Network Security Implementation</h2>
+        <p>When implementing the network security industry best practices were followed to secure the small office environment. The main goals were to strike a balance between secure and manageable by non-technical staff.</p>
+        <h2>Steps Taken Include:</h2>
+        <ul>
+            <li><strong>Router Security</strong> Secured the router with strong administrative credentials and configured to auto-update the firmware. Set Up DHCP. <a href="https://kb.netgear.com/21934/How-do-I-configure-a-Dynamic-Host-Configuration-Protocol-DHCP-reservation-using-the-web-interface-on-my-managed-switch" >Dynamic Host Configuration Protocol.</a> This will help have scalability in place for future growth.</li>
+            <li> <strong>Firewall Configuration:</strong> Configured Firewall using Windows Firewall Rules (Matarazzo, P. & Pamnani, V. 2024) <a href="https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/windows-firewall/rules" >Windows Firewall Rules</a></li>
+            <li><strong>Network Segmentation</strong> Used a managed switch to segment the network. Each port was configured to a specific device. This kept the server separate and would limit lateral movement in case of a breach</li>
+            <li> <strong>Switch Model: Netgear GS308E</strong> An inexpensive managed switch was selected <a href="https://www.netgear.com/support/product/gs308e/" >GS308E_8 Port GB Ethernet Plus Switch</a></li>
+            <li> <strong>Antivirus Protection:</strong> Configured Windows Defender on all workstations with regularly scheduled scans to ensure ongoing protection. *Windows Defender is updated through Windows Security System Updates.</li>
+            <li> <strong>Backup Strategy</strong>  Cloud Backups are managed by Amazon Web Services (AWS). On-premises backups are stored on the root of C on Simple Server.</li>
+            <li> <strong>Note for BU Strategy</strong> Having two backups, one on-prem and the other in the cloud will provide added data protection.</li>
+
+        </ul>
+        <h2>Incident Response Plan:</h2>
+        <p>An incident response plan was also created to guide office staff in the event of a security breach or a network issue. This plan was modeled after FRSecure and then customized to mt the needs of this small office. This plan outlines the steps that should be taken if an incident occurs. The plan was kept simple and easy to follow. The goal of the incident response plan is to minimize downtime and reduce data loss.</p>
+        <ul>
+            <li> <strong>Step 1: Identify and Document</strong> A.  Identify the nature of the issue (examples may be unauthorized access, malware infection, disaster). B. Document what has been affected.</li>
+            <li> <Strong>Step 2: Disconnect Affected Devices</Strong> Disconnect devices from the network to prevent further spread of the issue.</li>
+            <li> <strong>Step 3: Notify the Appropriate Person</strong> Contact Sam or IT Dept. Provide Documentation</li>
+            <li> <strong>Step 4: Assess the Cause</strong> Work with Sam/IT to determine the cause of the incident.</li>
+            <li> <strong>Step 5: Restore Systems</strong> If necessary, restore systems from Simple Server or Restore systems using AWS.</li>
+        </ul>
+        <h2>Conclusion</h2>
+        <p>This basic network and security documentation for a small office is intended to improve the day-to-day functioning of the business. This project documentation has provided a structured approach to managing a small office network. A network diagram was created, security protocols were defined, and an Acceptable Use Policy (AUP) was implemented. An incident response plan was drawn up to support employees when disaster hits. This documentation provides the basic tools needed to maintain an office network.</p>
+
         </p>
 
         </p>
@@ -66,6 +106,10 @@
         <ul>
             <li><a href="https://www.lucidchart.com/pages/examples/network-diagram">Lucidchart. (n.d.). Diagramming Tool.</a></li>
             <li><a href="https://youtu.be/GRy5GFuZfWw?si=fkT73HPPIwSl8V9F">Moran, D. (2022). How to configure an Active Directory password policy. Youtube.</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/defender-endpoint/use-group-policy-microsoft-defender-antivirus" >Microsoft Learn. (2024). Use Group Policy settings to configure and manage Microsoft Defender Antivirus. Microsoft.</a></li>
+            <li><a href="https://youtu.be/kuFM6_kyQVY?si=85hUwnGxYXjmUh5s" >Learn IT. (2021). SCCM Lab: installing Active Directory and creating domain part 4. Youtube.</a></li>
+            <li><a href="https://aws.amazon.com/free/?gclid=Cj0KCQjwj4K5BhDYARIsAD1Ly2rnqR1MBKhR3wvADW1BgqZVeerdpPk-5K5t4BijWBHl5E6D0tDI_e0aAhdYEALw_wcB&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=categories%23storage&trk=204856a5-23d2-4a8a-9262-22a8dcee767d&sc_channel=ps&ef_id=Cj0KCQjwj4K5BhDYARIsAD1Ly2rnqR1MBKhR3wvADW1BgqZVeerdpPk-5K5t4BijWBHl5E6D0tDI_e0aAhdYEALw_wcB:G:s&s_kwcid=AL!4422!3!651784483885!p!!g!!computer%20backup!19852661930!145019237977" >AWS Pricing.</a></li>
+            <li><a href="https://frsecure.com/acceptable-use-policy-template/" >FRSecure Free Acceptable Use Policy Template. (2025). </a></li>
             <!-- Continue the rest of your references in this format -->
         </ul>
     </article>
