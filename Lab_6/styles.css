@@ -126,11 +126,13 @@ header {
 
 /* Footer */
 footer {
-  grid-area: footer;
-  background-color: #4CAF50; /* same green as header */
-  padding: 15px;
-  font-size: 0.9em;
-  color: white; /* make text white for contrast */
-  border-top: 1px solid #ccc;
+    grid-area: footer;
+    background-color: #c8e6c9; /* Light green like the header */
+    padding: 15px;
+    font-size: 0.95em;
+    color: #333;
+    border-top: 1px solid #ccc;
+    border-radius: 6px;
 }
+
 
