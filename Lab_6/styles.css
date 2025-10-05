@@ -63,8 +63,13 @@ header {
 /* Main Content */
 .content {
     grid-area: content;
-    padding: 20px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centers items horizontally */
+    text-align: center;    /* centers text inside the block */
 }
+
 .content h2 {
     margin-bottom: 10px;
 }
@@ -81,7 +86,7 @@ header {
     border-radius: 4px;
 }
 #greeting {
-    margin-top: 10px;
+    margin-top: 15px;
     font-weight: bold;
     color: #4B0082;
 }
@@ -95,12 +100,27 @@ header {
     justify-content: center;
     align-self: start;
 }
+
 .ad img {
     max-width: 100%;
     height: auto;
     border: 2px solid #ddd;
     border-radius: 8px;
 }
+
+.ad-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.ad-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
 
 /* Footer */
 footer {
