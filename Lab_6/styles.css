@@ -1,0 +1,88 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Holy Grail Grid Layout */
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "ads main"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto auto;
+  min-height: 100vh;
+  gap: 10px;
+  padding: 10px;
+}
+
+header {
+  grid-area: header;
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  grid-area: nav;
+  background-color: #ddd;
+  padding: 20px;
+}
+
+main.content {
+  grid-area: main;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.ads {
+  grid-area: ads;
+  background-color: #eaeaea;
+  padding: 20px;
+  text-align: center;
+}
+
+.ads img {
+  max-width: 100%;
+  cursor: pointer;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* Input area styling */
+input[type="text"] {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6: Do Something!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lab 6: Holy Grail Layout</h1>
+        </header>
+
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Labs</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h2>Say Hello!</h2>
+            <input type="text" id="nameInput" placeholder="Stellar Soozie">
+            <button onclick="sayHello()">Greet Me</button>
+            <p id="greeting"></p>
+        </main>
+
+        <aside class="ad">
+            <a href="https://www.amazon.com/dp/B09TT6GRJ9" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/71o81btiTnL._AC_SL1500_.jpg" alt="JavaScript Cheat Sheet" width="200">
+            </a>
+        </aside>
+
+        <footer>
+            <p>Addendum: I created a page with a Holy Grail layout using CSS Grid. In the main content area, I used JavaScript to create a greeting interaction that displays a personalized message when the user types their name and clicks a button. I faced a challenge with connecting the button to the JavaScript function at first, but solved it by verifying that the script was correctly linked and that my function name matched the onclick event. This project helped reinforce how HTML, CSS, and JavaScript work together.</p>
+            <p>Last updated: <span id="lastModified"></span></p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Required footer script
+        document.getElementById('lastModified').textContent = document.lastModified;
+    </script>
+</body>
+</html>
