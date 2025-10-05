@@ -88,10 +88,12 @@ header {
     border-radius: 4px;
 }
 #greeting {
-    margin-top: 15px;
+    margin-top: 10px;
     font-weight: bold;
     color: #4B0082;
+    font-size: 1.1em;
 }
+
 
 /* Advertisement Section */
 .ad {
@@ -128,7 +130,7 @@ header {
 footer {
     grid-area: footer;
     background-color: #c8e6c9; /* Light green like the header */
-    padding: 15px;
+    padding: 20px;
     font-size: 0.95em;
     color: #333;
     border-top: 1px solid #ccc;
