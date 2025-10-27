@@ -24,10 +24,10 @@ const story = {
         image: "images/control_panel.jpg"
     },
     cargoBay: {
-        text: "Inside the cargo bay, you find two strange things: a shuttle to a secret moon base, and a glowing alien map.",
+        text: "Inside the cargo bay, you find a shuttle bay with two options. Where do you go?",
         choices: [
-            { text: "Board the shuttle to the moon base", next: "moonBase" },
-            { text: "Follow the map to find galactic treasure", next: "galacticTreasure" }
+            { text: "Board a shuttle to a secret moon base", next: "moonBase" },
+            { text: "Follow a mysterious treasure map", next: "galacticTreasure" }
         ],
         image: "images/spacecraft.jpg"
     },
@@ -49,7 +49,7 @@ const story = {
     robotUprising: {
         text: "You awaken rogue maintenance bots who see you as a threat. They chase you down!",
         choices: [
-            { text: "Evade them through an airlock", next: "lostInSpace" }
+            { text: "Escape through an airlock", next: "lostInSpace" }
         ],
         image: "images/robots.jpg"
     },
