@@ -4,6 +4,7 @@ const story = {
         choices: [
             { text: "Land on the planet", next: "planetLanding" },
             { text: "Explore the ship", next: "exploreShip" }
+            { text: "Go to the Captain's Quarters", next: "captainsQuarters" }
         ],
         image: "images/spacecraft.jpg"
     },
@@ -23,6 +24,16 @@ const story = {
         ],
         image: "images/control_panel.jpg"
     },
+    captainsQuarters: {
+        text: "You enter the Captain's Quartrs. The lights flicker, and the ship's AI terminal boots up with a deep machanical voice: 'Unauthorizede access detected.'",
+        choices: [
+            {text: "Attempt to reason with the AI", next: "robotUprising" },
+            {txt: "Run for the escape pod", next: "lostInSpace"}
+        ],
+        image: "images/cotrol_panel.jpg"
+    },
+    
+    }
     cargoBay: {
         text: "Inside the cargo bay, you find a shuttle bay with two options. Where do you go?",
         choices: [
