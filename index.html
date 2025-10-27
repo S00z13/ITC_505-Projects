@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An interactive space-themed 'Choose Your Own Adventure' game built with HTML, CSS, and JavaScript." />
+  <title>Space Adventure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>🚀 Space Adventure: Choose Your Mission!</h1>
+  </header>
+
+  <main class="content">
+    <div id="story-box">
+      <p id="story-text">Your mission begins now...</p>
+    </div>
+
+    <div id="image-box">
+      <img id="story-image" src="images/start.jpg" alt="Beginning of story" />
+    </div>
+
+    <div id="choices">
+      <!-- Choices will be inserted here via JS -->
+    </div>
+  </main>
+   <footer>
+    <h4>Image Credits</h4>
+    <ul>
+      <li><strong>spacecraft.jpg</strong> – NASA Stock Image via <a href="https://www.istockphoto.com/photos/nasa-spaceship" target="_blank">iStock</a></li>
+      <li><strong>planet.jpg</strong> – Discovery Channel via <a href="https://www.discovery.com/exploration/the-lost-world-of-socotra-archipelago" target="_blank">Discovery</a></li>
+      <li><strong>control_panel.jpg</strong> – <a href="https://www.kaspersky.com/resource-center/threats/viruses-malware" target="_blank">Kaspersky</a></li>
+      <li><strong>space_party.jpg</strong> – <a href="https://www.shutterstock.com/image-vector/cute-astronaut-celebrate-birthday-party-on-2503049705" target="_blank">Shutterstock</a></li>
+      <li><strong>sarlacc_pit.jpg</strong> – Star Wars Minute via <a href="https://wiki.starwarsminute.com/index.php?title=File:Sarlacc_ball_pit.jpg" target="_blank">wiki.starwarsminute.com</a></li>
+      <li><strong>wormhole_baby.jpg</strong> – <a href="https://www.astronomy.com/science/what-are-wormholes-an-astrophysicist-explains-these-shortcuts-through-space/" target="_blank">Astronomy Magazine</a></li>
+      <li><strong>robots.jpg</strong> – <a href="https://www.technologyreview.com/2025/01/23/1110496/whats-next-for-robots/" target="_blank">MIT Technology Review</a></li>
+      <li><strong>moon_base.jpg</strong> – <a href="https://www.smithsonianmag.com/science-nature/four-things-weve-learned-about-nasas-planned-base-camp-on-the-moon-180980589/" target="_blank">Smithsonian Magazine</a></li>
+      <li><strong>treasure.jpg</strong> – <a href="https://scitechdaily.com/space-treasure-webb-captures-its-first-ever-direct-image-of-a-distant-world/" target="_blank">SciTechDaily</a></li>
+      <li><strong>lost_in_space.jpg</strong> – <a href="https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens/Cassini_concludes_pioneering_mission_at_Saturn" target="_blank">European Space Agency</a></li>
+    </ul>
+
+    <p>Last updated:
+      <span id="lastModified"></span>
+    </p>
+  </footer>
+
+  <script src="scripts/script.js"></script>
+  <script>
+    var x = document.lastModified;
+    document.getElementById("lastModified").textContent = x;
+  </script>
+</body>
+</html>
+
