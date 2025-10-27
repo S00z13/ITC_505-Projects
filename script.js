@@ -16,7 +16,7 @@ const story = {
             { text: "Ignore it and explore further", next: "sarlaccPit" }
         ],
         image: "images/planet.jpg",
-        noSound: true // <-- Prevent background music & sound
+        sound: "sounds/wind.mp3"
     },
 
     exploreShip: {
@@ -50,7 +50,8 @@ const story = {
     alienFriends: {
         text: "Inside the forest, friendly aliens throw a space party in your honor. You party all night!",
         choices: [],
-        image: "images/space_party.jpg"
+        image: "images/space_party.jpg",
+        sound: "sounds/yay.mp3"
     },
 
     sarlaccPit: {
@@ -62,7 +63,8 @@ const story = {
     wormholeBaby: {
         text: "You’re sucked into a wormhole and emerge as a space baby in a new timeline. Wild.",
         choices: [],
-        image: "images/wormhole_baby.jpg"
+        image: "images/wormhole_baby.jpg",
+        sound: "sounds/baby_laugh.mp3"
     },
 
     robotUprising: {
