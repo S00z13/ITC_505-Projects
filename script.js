@@ -3,11 +3,12 @@ const story = {
         text: "You wake up aboard a mysterious spacecraft drifting near an uncharted planet. What do you do?",
         choices: [
             { text: "Land on the planet", next: "planetLanding" },
-            { text: "Explore the ship", next: "exploreShip" }
+            { text: "Explore the ship", next: "exploreShip" },
             { text: "Go to the Captain's Quarters", next: "captainsQuarters" }
         ],
         image: "images/spacecraft.jpg"
     },
+
     planetLanding: {
         text: "You land on the planet and find an ancient alien forest. Do you go inside?",
         choices: [
@@ -16,6 +17,7 @@ const story = {
         ],
         image: "images/planet.jpg"
     },
+
     exploreShip: {
         text: "You find a suspicious glowing control panel. It’s pulsing with energy. Do you touch it?",
         choices: [
@@ -24,16 +26,17 @@ const story = {
         ],
         image: "images/control_panel.jpg"
     },
+
     captainsQuarters: {
-        text: "You enter the Captain's Quartrs. The lights flicker, and the ship's AI terminal boots up with a deep machanical voice: 'Unauthorizede access detected.'",
+        text: "You enter the Captain's Quarters. The lights flicker, and the ship's AI terminal boots up with a deep mechanical voice: 'Unauthorized access detected.'",
         choices: [
-            {text: "Attempt to reason with the AI", next: "robotUprising" },
-            {txt: "Run for the escape pod", next: "lostInSpace"}
+            { text: "Attempt to reason with the AI", next: "robotUprising" },
+            { text: "Run for the escape pod", next: "lostInSpace" }
         ],
-        image: "images/cotrol_panel.jpg"
+        image: "images/control_panel.jpg",
+        sound: "sounds/ai_warning.mp3"
     },
-    
-    }
+
     cargoBay: {
         text: "Inside the cargo bay, you find a shuttle bay with two options. Where do you go?",
         choices: [
@@ -42,21 +45,25 @@ const story = {
         ],
         image: "images/spacecraft.jpg"
     },
+
     alienFriends: {
         text: "Inside the forest, friendly aliens throw a space party in your honor. You party all night!",
         choices: [],
         image: "images/space_party.jpg"
     },
+
     sarlaccPit: {
         text: "As you walk further, the ground collapses beneath you... you’ve fallen into a sarlacc party pit. Oops!",
         choices: [],
         image: "images/sarlacc_pit.jpg"
     },
+
     wormholeBaby: {
         text: "You’re sucked into a wormhole and emerge as a space baby in a new timeline. Wild.",
         choices: [],
         image: "images/wormhole_baby.jpg"
     },
+
     robotUprising: {
         text: "You awaken rogue maintenance bots who see you as a threat. They chase you down!",
         choices: [
@@ -64,27 +71,37 @@ const story = {
         ],
         image: "images/robots.jpg"
     },
+
     moonBase: {
         text: "You take a detour to a secret moon base where astronauts welcome you as their new commander.",
         choices: [],
         image: "images/moon_base.jpg"
     },
+
     galacticTreasure: {
         text: "You find a glowing map to a galactic treasure... and you actually find it. You’re rich! (With knowledge)",
         choices: [],
         image: "images/treasure.jpg"
     },
+
     lostInSpace: {
         text: "You drift out an airlock while stargazing and float endlessly into the stars. Peaceful... but yikes.",
         choices: [],
-        image: "images/lost_in_space.jpg"
+        image: "images/lost_in_space.jpg",
+        sound: "sounds/power_failure.mp3"
     }
 };
 
 let currentScene = 'start';
 
+// Background sound (looping ship ambience)
+const backgroundAudio = new Audio("sounds/background_ship.mp3");
+backgroundAudio.loop = true;
+backgroundAudio.volume = 0.4;
+
 function startGame() {
     currentScene = 'start';
+    backgroundAudio.play();
     showScene(currentScene);
 }
 
@@ -94,16 +111,19 @@ function showScene(sceneKey) {
     const choicesContainer = document.getElementById('choices');
     const imageContainer = document.getElementById('story-image');
 
-    // Update story text
+    // Update text and image
     storyText.textContent = scene.text;
-
-    // Clear previous choices
+    imageContainer.src = scene.image;
     choicesContainer.innerHTML = "";
 
-    // Update image
-    imageContainer.src = scene.image;
+    // Play scene-specific sound (if defined)
+    if (scene.sound) {
+        const soundEffect = new Audio(scene.sound);
+        soundEffect.volume = 0.7;
+        soundEffect.play();
+    }
 
-    // Create buttons for choices
+    // Handle choices
     if (scene.choices.length > 0) {
         scene.choices.forEach(choice => {
             const button = document.createElement('button');
@@ -115,7 +135,6 @@ function showScene(sceneKey) {
             choicesContainer.appendChild(button);
         });
     } else {
-        // End game scene
         const button = document.createElement('button');
         button.textContent = "Restart Adventure";
         button.classList.add('choice-button');
