@@ -15,7 +15,8 @@ const story = {
             { text: "Enter the forest", next: "alienFriends" },
             { text: "Ignore it and explore further", next: "sarlaccPit" }
         ],
-        image: "images/planet.jpg"
+        image: "images/planet.jpg",
+        noSound: true // <-- Prevent background music & sound
     },
 
     exploreShip: {
@@ -93,15 +94,25 @@ const story = {
 };
 
 let currentScene = 'start';
+let isMuted = false;
 
-// Background ambient ship sound
+// Background audio
 const backgroundAudio = new Audio("sounds/background_ship.mp3");
 backgroundAudio.loop = true;
 backgroundAudio.volume = 0.4;
 
+// Mute button handler
+function toggleMute() {
+    isMuted = !isMuted;
+    backgroundAudio.muted = isMuted;
+
+    const muteBtn = document.getElementById('mute-button');
+    muteBtn.textContent = isMuted ? "🔇 Unmute" : "🔊 Mute";
+}
+
 function startGame() {
     currentScene = 'start';
-    backgroundAudio.play();
+    if (!isMuted) backgroundAudio.play();
     showScene(currentScene);
 }
 
@@ -116,14 +127,21 @@ function showScene(sceneKey) {
     imageContainer.src = scene.image;
     choicesContainer.innerHTML = "";
 
-    // Play scene-specific sound if available
-    if (scene.sound) {
+    // Manage background audio
+    if (scene.noSound) {
+        backgroundAudio.pause();
+    } else if (!isMuted && backgroundAudio.paused) {
+        backgroundAudio.play();
+    }
+
+    // Play scene-specific sound effect
+    if (scene.sound && !isMuted) {
         const soundEffect = new Audio(scene.sound);
         soundEffect.volume = 0.7;
         soundEffect.play();
     }
 
-    // Render choices or restart
+    // Choices
     if (scene.choices.length > 0) {
         scene.choices.forEach(choice => {
             const button = document.createElement('button');
@@ -143,4 +161,26 @@ function showScene(sceneKey) {
     }
 }
 
-window.onload = startGame;
+window.onload = () => {
+    startGame();
+
+    // Add mute button if it doesn't exist
+    if (!document.getElementById('mute-button')) {
+        const muteButton = document.createElement('button');
+        muteButton.id = 'mute-button';
+        muteButton.textContent = "🔊 Mute";
+        muteButton.style.position = "fixed";
+        muteButton.style.top = "10px";
+        muteButton.style.right = "10px";
+        muteButton.style.padding = "8px 12px";
+        muteButton.style.fontSize = "1rem";
+        muteButton.style.zIndex = 1000;
+        muteButton.style.backgroundColor = "#111";
+        muteButton.style.color = "#0f0";
+        muteButton.style.border = "1px solid #0f0";
+        muteButton.style.cursor = "pointer";
+
+        muteButton.addEventListener('click', toggleMute);
+        document.body.appendChild(muteButton);
+    }
+};
