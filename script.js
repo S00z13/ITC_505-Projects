@@ -19,9 +19,17 @@ const story = {
         text: "You find a suspicious glowing control panel. It’s pulsing with energy. Do you touch it?",
         choices: [
             { text: "Touch it", next: "wormholeBaby" },
-            { text: "Walk away and check the cargo bay", next: "robotUprising" }
+            { text: "Walk away and check the cargo bay", next: "cargoBay" }
         ],
         image: "images/control_panel.jpg"
+    },
+    cargoBay: {
+        text: "Inside the cargo bay, you find two strange things: a shuttle to a secret moon base, and a glowing alien map.",
+        choices: [
+            { text: "Board the shuttle to the moon base", next: "moonBase" },
+            { text: "Follow the map to find galactic treasure", next: "galacticTreasure" }
+        ],
+        image: "images/spacecraft.jpg"
     },
     alienFriends: {
         text: "Inside the forest, friendly aliens throw a space party in your honor. You party all night!",
@@ -40,7 +48,9 @@ const story = {
     },
     robotUprising: {
         text: "You awaken rogue maintenance bots who see you as a threat. They chase you down!",
-        choices: [],
+        choices: [
+            { text: "Evade them through an airlock", next: "lostInSpace" }
+        ],
         image: "images/robots.jpg"
     },
     moonBase: {
