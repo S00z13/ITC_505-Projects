@@ -94,7 +94,7 @@ const story = {
 
 let currentScene = 'start';
 
-// Background sound (looping ship ambience)
+// Background ambient ship sound
 const backgroundAudio = new Audio("sounds/background_ship.mp3");
 backgroundAudio.loop = true;
 backgroundAudio.volume = 0.4;
@@ -116,14 +116,14 @@ function showScene(sceneKey) {
     imageContainer.src = scene.image;
     choicesContainer.innerHTML = "";
 
-    // Play scene-specific sound (if defined)
+    // Play scene-specific sound if available
     if (scene.sound) {
         const soundEffect = new Audio(scene.sound);
         soundEffect.volume = 0.7;
         soundEffect.play();
     }
 
-    // Handle choices
+    // Render choices or restart
     if (scene.choices.length > 0) {
         scene.choices.forEach(choice => {
             const button = document.createElement('button');
