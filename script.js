@@ -101,7 +101,7 @@ let isMuted = false;
 // Background audio
 const backgroundAudio = new Audio("sounds/background_ship.mp3");
 backgroundAudio.loop = true;
-backgroundAudio.volume = 0.4;
+backgroundAudio.volume = 0.1;
 
 // Mute button handler
 function toggleMute() {
