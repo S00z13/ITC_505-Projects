@@ -24,12 +24,12 @@ const story = {
         image: "images/control_panel.jpg"
     },
     alienFriends: {
-        text: "Inside the temple, friendly aliens throw a space party in your honor. You party all night!",
+        text: "Inside the forest, friendly aliens throw a space party in your honor. You party all night!",
         choices: [],
         image: "images/space_party.jpg"
     },
     sarlaccPit: {
-        text: "As you walk further, the ground collapses beneath you... you’ve fallen into a sarlacc pit. Oops!",
+        text: "As you walk further, the ground collapses beneath you... you’ve fallen into a sarlacc party pit. Oops!",
         choices: [],
         image: "images/sarlacc_pit.jpg"
     },
@@ -49,7 +49,7 @@ const story = {
         image: "images/moon_base.jpg"
     },
     galacticTreasure: {
-        text: "You find a glowing map to a galactic treasure... and you actually find it. You’re rich!",
+        text: "You find a glowing map to a galactic treasure... and you actually find it. You’re rich! (With knowledge)",
         choices: [],
         image: "images/treasure.jpg"
     },
