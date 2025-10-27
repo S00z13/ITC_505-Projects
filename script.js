@@ -8,7 +8,7 @@ const story = {
         image: "images/spacecraft.jpg"
     },
     planetLanding: {
-        text: "You land on the planet and find an ancient alien temple. Do you go inside?",
+        text: "You land on the planet and find an ancient alien forest. Do you go inside?",
         choices: [
             { text: "Enter the temple", next: "alienFriends" },
             { text: "Ignore it and explore further", next: "sarlaccPit" }
